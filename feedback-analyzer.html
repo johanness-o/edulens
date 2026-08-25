@@ -1,3 +1,10 @@
+  UW PICO 5.09                                 File: feedback-analyzer.html                                    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+^G Get Help       ^O WriteOut       ^R Read File      ^Y Prev Pg        ^K Cut Text       ^C Cur Pos        
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,10 +50,6 @@ body {
   line-height: 1.6;
 }
 
-<<<<<<< HEAD
-=======
-/* HEADER */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 header {
   border-bottom: 1px solid var(--border);
   padding: 1.25rem 2rem;
@@ -104,10 +107,6 @@ header {
   letter-spacing: 0.05em;
 }
 
-<<<<<<< HEAD
-=======
-/* MAIN */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -140,10 +139,6 @@ main {
   line-height: 1.7;
 }
 
-<<<<<<< HEAD
-=======
-/* INPUT PANEL */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .panel {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -207,36 +202,6 @@ input:focus, select:focus, textarea:focus {
 
 select option { background: var(--surface2); }
 
-textarea {
-  height: 180px;
-  resize: vertical;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.8rem;
-  line-height: 1.6;
-}
-
-.textarea-hint {
-  font-size: 0.7rem;
-  color: var(--text3);
-  margin-top: 0.4rem;
-  font-family: 'DM Mono', monospace;
-}
-
-.sample-btn {
-  font-size: 0.7rem;
-  color: var(--accent);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: 'DM Mono', monospace;
-  letter-spacing: 0.05em;
-  padding: 0;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.sample-btn:hover { color: var(--text); }
-
 .analyze-btn {
   width: 100%;
   padding: 0.85rem;
@@ -260,10 +225,6 @@ textarea {
 .analyze-btn:hover:not(:disabled) { background: #C93A25; }
 .analyze-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-<<<<<<< HEAD
-=======
-/* RESULTS */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 #results {
   display: none;
   opacity: 0;
@@ -289,10 +250,6 @@ textarea {
   font-family: 'DM Mono', monospace;
 }
 
-<<<<<<< HEAD
-=======
-/* SUMMARY CARDS */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -334,10 +291,6 @@ textarea {
 .val-blue { color: var(--blue); }
 .val-purple { color: var(--purple); }
 
-<<<<<<< HEAD
-=======
-/* SENTIMENT BAR */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .sentiment-bar-wrap {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -383,10 +336,6 @@ textarea {
   vertical-align: middle;
 }
 
-<<<<<<< HEAD
-=======
-/* TWO COL */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -394,10 +343,6 @@ textarea {
   margin-bottom: 1.5rem;
 }
 
-<<<<<<< HEAD
-=======
-/* THEMES */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .theme-list { display: flex; flex-direction: column; gap: 0.6rem; }
 
 .theme-item {
@@ -425,10 +370,6 @@ textarea {
 .theme-name { min-width: 120px; color: var(--text2); font-size: 0.8rem; }
 .theme-pct { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--text3); min-width: 2.5rem; text-align: right; }
 
-<<<<<<< HEAD
-=======
-/* EQUITY */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .equity-flags { display: flex; flex-direction: column; gap: 0.75rem; }
 
 .equity-flag {
@@ -454,10 +395,6 @@ textarea {
 
 .flag-text { color: var(--text); }
 
-<<<<<<< HEAD
-=======
-/* COMMENTS TABLE */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .comments-section {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -506,10 +443,6 @@ textarea {
 .badge-neu { background: var(--amber-dim); color: var(--amber); }
 .badge-neg { background: var(--red-dim); color: var(--red); }
 
-<<<<<<< HEAD
-=======
-/* EXECUTIVE SUMMARY */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .exec-summary {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -526,50 +459,6 @@ textarea {
   line-height: 1.8;
 }
 
-<<<<<<< HEAD
-=======
-/* LOADING */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
-.loading-overlay {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
-  gap: 1rem;
-}
-
-.loading-dots {
-  display: flex;
-  gap: 0.4rem;
-}
-
-.dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 1.4s ease infinite;
-}
-
-.dot:nth-child(2) { animation-delay: 0.2s; }
-.dot:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes pulse {
-  0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
-  40% { opacity: 1; transform: scale(1); }
-}
-
-.loading-text {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--text3);
-  letter-spacing: 0.1em;
-}
-
-<<<<<<< HEAD
-=======
-/* EXPORT */
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 .export-bar {
   display: flex;
   gap: 0.75rem;
@@ -634,24 +523,11 @@ textarea {
     <p>Paste course evaluations to get sentiment analysis, theme extraction, and equity-informed insights surfacing whose voices are being heard and how.</p>
   </div>
 
-<<<<<<< HEAD
-=======
-  <!-- INPUT PANEL -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   <div class="panel">
     <div class="panel-header">
     </div>
     <div class="panel-body">
 
-<<<<<<< HEAD
-      <div style="margin-bottom:1rem;">
-        <label>Groq API Key <span style="color:var(--text3)">(stored only in memory for this session)</span></label>
-        <input type="password" id="api-key" placeholder="gsk_..." style="font-size:13px;" />
-      </div>
-
-=======
-      <!-- CSV Upload -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
       <div style="margin-bottom:1rem;">
         <label>Load from CSV files <span style="color:var(--text3)">(select all CSVs from your ProfessorFeedback folder)</span></label>
         <div style="display:flex;gap:8px;align-items:center;margin-top:0.4rem;">
@@ -662,10 +538,6 @@ textarea {
         <div id="csv-status" style="font-size:11px;color:var(--text3);margin-top:6px;font-family:'DM Mono',monospace;"></div>
       </div>
 
-<<<<<<< HEAD
-=======
-      <!-- Instructor + Term filter -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
       <div id="filter-row" style="display:none;margin-bottom:1rem;">
         <div class="input-grid">
           <div>
@@ -684,20 +556,12 @@ textarea {
         <div style="font-size:11px;color:var(--text3);margin-top:6px;font-family:'DM Mono',monospace;" id="filter-count"></div>
       </div>
 
-<<<<<<< HEAD
-=======
-      <!-- Manual input -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
       <button class="analyze-btn" id="analyze-btn" onclick="analyze()">
         <span id="btn-text">Analyze Feedback</span>
       </button>
     </div>
   </div>
 
-<<<<<<< HEAD
-=======
-  <!-- RESULTS -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   <div id="results">
 
     <div class="results-header">
@@ -710,15 +574,8 @@ textarea {
       <button class="export-btn" onclick="exportText()">Export Text Report</button>
     </div>
 
-<<<<<<< HEAD
     <div class="summary-grid" id="summary-cards"></div>
 
-=======
-    <!-- SUMMARY CARDS -->
-    <div class="summary-grid" id="summary-cards"></div>
-
-    <!-- SENTIMENT BAR -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
     <div class="sentiment-bar-wrap">
       <div class="sentiment-bar-label">Sentiment Distribution</div>
       <div class="sentiment-bar" id="sent-bar">
@@ -733,10 +590,6 @@ textarea {
       </div>
     </div>
 
-<<<<<<< HEAD
-=======
-    <!-- THEMES + EQUITY -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
     <div class="two-col">
       <div class="panel" style="opacity:1;animation:none;">
         <div class="panel-header"><span class="panel-title">Key Themes</span></div>
@@ -752,19 +605,11 @@ textarea {
       </div>
     </div>
 
-<<<<<<< HEAD
-=======
-    <!-- EXEC SUMMARY -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
     <div class="exec-summary">
       <div class="panel-title" style="margin-bottom:0.75rem;">Executive Summary</div>
       <div class="exec-summary-text" id="exec-summary"></div>
     </div>
 
-<<<<<<< HEAD
-=======
-    <!-- COMMENTS TABLE -->
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
     <div class="comments-section">
       <div class="panel-header"><span class="panel-title">Comment-Level Analysis</span></div>
       <table class="comments-table">
@@ -785,35 +630,8 @@ textarea {
 </main>
 
 <script>
-<<<<<<< HEAD
 let analysisData = null;
 
-=======
-const SAMPLE = `The professor was incredibly clear and always made time for questions after class.
-I struggled to follow the lectures, felt like prior knowledge was assumed that wasn't covered.
-Loved the group projects, really helped me understand real-world applications.
-Office hours were never available at times that worked for students with jobs.
-The course content was interesting but the grading rubric was very vague.
-Best class I've taken this semester. The material is hard but the support is there.
-I felt like my questions were dismissed in class compared to other students.
-More diverse examples in the datasets used would have been helpful.
-The pace was too fast. I learn differently and never felt like I could catch up.
-Excellent use of real data and current events, kept me engaged throughout.
-I didn't feel comfortable speaking up in class, the environment felt unwelcoming at times.
-The workload was reasonable and the feedback on assignments was genuinely helpful.
-Assignments felt disconnected from what was taught. More alignment needed.
-Great professor, really cares about students understanding the material.
-Some students dominated discussions and I wish there was more structure for participation.`;
-
-let analysisData = null;
-
-function loadSample() {
-  document.getElementById('feedback-input').value = SAMPLE;
-  document.getElementById('course-name').value = 'INST327 Database Design and Modeling';
-  document.getElementById('term').value = 'Spring 2026';
-}
-
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 function showBubble(msg) {
   let bubble = document.getElementById('error-bubble');
   if (!bubble) {
@@ -836,13 +654,7 @@ async function analyze() {
       }).map(r => r.question_response).filter(Boolean)
     : [];
   if (responses.length === 0) { showBubble('No responses loaded. Please select your CSV files first.'); return; }
-<<<<<<< HEAD
 
-  const key = document.getElementById('api-key').value.trim();
-  if (!key.startsWith('gsk_')) { showBubble('Enter a valid Groq API key first.'); return; }
-
-=======
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   const comments = responses;
   const course = allRows[0] ? ('Instructor ' + (document.getElementById('filter-instructor').value || 'All')) : 'Course';
   const term = document.getElementById('filter-term').value || '';
@@ -877,31 +689,18 @@ Respond ONLY with a valid JSON object, no markdown, no backticks:
 }`;
 
   try {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const res = await fetch("https://edulens-zai3.onrender.com/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-<<<<<<< HEAD
-        "Authorization": "Bearer " + key,
-=======
-        "Authorization": "Bearer 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",
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
       },
-      body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
-        max_tokens: 8000,
-        messages: [{role: "user", content: prompt}]
-      })
+      body: JSON.stringify({ prompt: prompt })
     });
     const data = await res.json();
     const text = data.choices[0].message.content.trim().replace(/```json|```/g, "").trim();
     const lastBrace = text.lastIndexOf('}');
     const cleaned = text.substring(0, lastBrace + 1);
     try { analysisData = JSON.parse(cleaned); } catch(e) {
-<<<<<<< HEAD
-=======
-      // try trimming to last complete object
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
       const alt = text.substring(0, text.lastIndexOf('"}') + 2) + ']}';
       analysisData = JSON.parse(alt);
     }
@@ -914,11 +713,7 @@ Respond ONLY with a valid JSON object, no markdown, no backticks:
     console.error(e);
   } finally {
     btn.disabled = false;
-<<<<<<< HEAD
     document.getElementById('btn-text').textContent = 'Analyze Feedback';
-=======
-    document.getElementById('btn-text').textContent = 'Analyze + add \u2197';
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   }
 }
 
@@ -932,10 +727,6 @@ function renderResults(d) {
   const neuP = Math.round(neu/d.total*100);
   const negP = 100 - posP - neuP;
 
-<<<<<<< HEAD
-=======
-  // Summary cards
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   const sentColor = d.overall_sentiment === 'positive' ? 'val-green' : d.overall_sentiment === 'mixed' ? 'val-amber' : 'val-red';
   document.getElementById('summary-cards').innerHTML = `
     <div class="summary-card">
@@ -955,10 +746,6 @@ function renderResults(d) {
     </div>
   `;
 
-<<<<<<< HEAD
-=======
-  // Sentiment bar
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   setTimeout(() => {
     document.getElementById('bar-pos').style.width = posP + '%';
     document.getElementById('bar-neu').style.width = neuP + '%';
@@ -968,10 +755,6 @@ function renderResults(d) {
   document.getElementById('pct-neu').textContent = neuP + '%';
   document.getElementById('pct-neg').textContent = negP + '%';
 
-<<<<<<< HEAD
-=======
-  // Themes
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   const maxTheme = Math.max(...d.themes.map(t => t.count));
   document.getElementById('theme-list').innerHTML = d.themes
     .sort((a,b) => b.count - a.count)
@@ -984,30 +767,16 @@ function renderResults(d) {
         <span class="theme-pct">${t.count}</span>
       </div>`).join('');
 
-<<<<<<< HEAD
-=======
-  // Equity flags
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   document.getElementById('equity-flags').innerHTML = d.equity_flags.map(f => `
     <div class="equity-flag flag-${f.type === 'warning' ? 'warn' : f.type === 'ok' ? 'ok' : 'info'}">
       <div class="flag-label">${f.label}</div>
       <div class="flag-text">${f.text}</div>
     </div>`).join('');
 
-<<<<<<< HEAD
   document.getElementById('exec-summary').textContent = d.executive_summary;
 
   document.getElementById('results-meta').textContent = `Generated ${new Date().toLocaleString()}`;
 
-=======
-  // Exec summary
-  document.getElementById('exec-summary').textContent = d.executive_summary;
-
-  // Results meta
-  document.getElementById('results-meta').textContent = `Generated ${new Date().toLocaleString()}`;
-
-  // Comments table
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   document.getElementById('comments-tbody').innerHTML = d.comments.map(c => `
     <tr>
       <td style="color:var(--text3);font-family:'DM Mono',monospace;font-size:0.72rem;">${c.index}</td>
@@ -1027,13 +796,7 @@ function renderResults(d) {
   resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-<<<<<<< HEAD
 let allRows = [];
-=======
-// ── CSV Loading ───────────────────────────────────────────────────────────────
-
-let allRows = [];  // all parsed rows from all CSVs
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
 
 function parseCSV(text) {
   const lines = text.split('\n').filter(l => l.trim());
@@ -1046,10 +809,6 @@ function parseCSV(text) {
     if (vals.length < headers.length) continue;
     const row = {};
     headers.forEach((h, idx) => row[h] = vals[idx] || '');
-<<<<<<< HEAD
-=======
-    // also try comma split if tab didnt work
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
     if (!row['question_response'] && lines[i].includes(',')) {
       const cvals = lines[i].split(',').map(v => v.trim().replace(/^"|"$/g, ''));
       headers.forEach((h, idx) => row[h] = cvals[idx] || '');
@@ -1083,10 +842,6 @@ async function loadCSVs() {
 
   status.textContent = allRows.length + ' responses loaded from ' + files.length + ' file(s).';
 
-<<<<<<< HEAD
-=======
-  // Populate instructor dropdown
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   const instructors = [...new Set(allRows.map(r => r['instructor']).filter(Boolean))].sort();
   const terms = [...new Set(allRows.map(r => r['term']).filter(Boolean))].sort();
 
@@ -1111,20 +866,6 @@ function applyFilter() {
 
   const responses = filtered.map(r => r['question_response']).filter(Boolean);
 
-<<<<<<< HEAD
-=======
-  // Auto-fill course name and term fields
-  if (filtered.length > 0) {
-    const firstRow = filtered[0];
-    if (firstRow['instructor'] && instructor !== 'all') {
-      document.getElementById('course-name').value = 'Instructor ' + firstRow['instructor'];
-    }
-    if (firstRow['term'] && term !== 'all') {
-      document.getElementById('term').value = firstRow['term'];
-    }
-  }
-
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
   document.getElementById('filter-count').textContent = responses.length + ' responses ready for analysis.';
 }
 
