@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduLens: Course Feedback Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0E0E0F;
+  --surface: #161618;
+  --surface2: #1E1E21;
+  --border: #2A2A2E;
+  --border2: #333338;
+  --text: #F0EDE8;
+  --text2: #9B9892;
+  --text3: #5C5A57;
+  --green: #4ADE80;
+  --green-dim: rgba(74,222,128,0.12);
+  --amber: #FBBF24;
+  --amber-dim: rgba(251,191,36,0.12);
+  --red: #F87171;
+  --red-dim: rgba(248,113,113,0.12);
+  --blue: #60A5FA;
+  --blue-dim: rgba(96,165,250,0.12);
+  --purple: #C084FC;
+  --purple-dim: rgba(192,132,252,0.12);
+  --accent: #F55036;
+  --accent-dim: rgba(232,130,90,0.12);
+  --radius: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+<<<<<<< HEAD
+=======
+/* HEADER */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: rgba(14,14,15,0.92);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.logo-text {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+.logo-sub {
+  font-size: 0.7rem;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+}
+
+.header-badge {
+  font-size: 0.68rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border2);
+  border-radius: 2rem;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+<<<<<<< HEAD
+=======
+/* MAIN */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.hero {
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.hero h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--text2);
+  font-size: 0.9rem;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+<<<<<<< HEAD
+=======
+/* INPUT PANEL */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.15s ease forwards;
+}
+
+.panel-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text2);
+}
+
+.panel-body { padding: 1.25rem; }
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 0.4rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  padding: 0.6rem 0.85rem;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+}
+
+select option { background: var(--surface2); }
+
+textarea {
+  height: 180px;
+  resize: vertical;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.textarea-hint {
+  font-size: 0.7rem;
+  color: var(--text3);
+  margin-top: 0.4rem;
+  font-family: 'DM Mono', monospace;
+}
+
+.sample-btn {
+  font-size: 0.7rem;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.05em;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sample-btn:hover { color: var(--text); }
+
+.analyze-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.2s;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.analyze-btn:hover:not(:disabled) { background: #C93A25; }
+.analyze-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+<<<<<<< HEAD
+=======
+/* RESULTS */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+#results {
+  display: none;
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.results-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.results-meta {
+  font-size: 0.72rem;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+}
+
+<<<<<<< HEAD
+=======
+/* SUMMARY CARDS */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.summary-card-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card-value {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.summary-card-sub {
+  font-size: 0.75rem;
+  color: var(--text2);
+}
+
+.val-green { color: var(--green); }
+.val-amber { color: var(--amber); }
+.val-red { color: var(--red); }
+.val-blue { color: var(--blue); }
+.val-purple { color: var(--purple); }
+
+<<<<<<< HEAD
+=======
+/* SENTIMENT BAR */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.sentiment-bar-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.sentiment-bar-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 1rem;
+}
+
+.sentiment-bar {
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 0.75rem;
+}
+
+.bar-seg { height: 100%; transition: width 1s ease; }
+.bar-pos { background: var(--green); }
+.bar-neu { background: var(--amber); }
+.bar-neg { background: var(--red); }
+
+.bar-legend {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--text2);
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+<<<<<<< HEAD
+=======
+/* TWO COL */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+<<<<<<< HEAD
+=======
+/* THEMES */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.theme-list { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.theme-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.theme-bar-wrap {
+  flex: 1;
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.theme-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 1.2s ease;
+}
+
+.theme-name { min-width: 120px; color: var(--text2); font-size: 0.8rem; }
+.theme-pct { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--text3); min-width: 2.5rem; text-align: right; }
+
+<<<<<<< HEAD
+=======
+/* EQUITY */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.equity-flags { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.equity-flag {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  border-left: 3px solid;
+}
+
+.flag-warn { background: var(--amber-dim); border-color: var(--amber); color: var(--amber); }
+.flag-ok { background: var(--green-dim); border-color: var(--green); color: var(--green); }
+.flag-info { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
+
+.flag-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 0.25rem;
+  opacity: 0.8;
+}
+
+.flag-text { color: var(--text); }
+
+<<<<<<< HEAD
+=======
+/* COMMENTS TABLE */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.comments-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.comments-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+
+.comments-table th {
+  background: var(--surface2);
+  padding: 0.6rem 1rem;
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+  border-bottom: 1px solid var(--border);
+}
+
+.comments-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+.comments-table tr:last-child td { border-bottom: none; }
+.comments-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+.sentiment-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.68rem;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.badge-pos { background: var(--green-dim); color: var(--green); }
+.badge-neu { background: var(--amber-dim); color: var(--amber); }
+.badge-neg { background: var(--red-dim); color: var(--red); }
+
+<<<<<<< HEAD
+=======
+/* EXECUTIVE SUMMARY */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.exec-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.exec-summary-text {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text2);
+  line-height: 1.8;
+}
+
+<<<<<<< HEAD
+=======
+/* LOADING */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.loading-overlay {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.4s ease infinite;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulse {
+  0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
+
+.loading-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+}
+
+<<<<<<< HEAD
+=======
+/* EXPORT */
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+.export-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.export-btn {
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  color: var(--text2);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.export-btn:hover { border-color: var(--text2); color: var(--text); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.spinner {
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 640px) {
+  main { padding: 2rem 1rem; }
+  .input-grid { grid-template-columns: 1fr; }
+  .summary-grid { grid-template-columns: 1fr 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">EL</div>
+    <div>
+      <div class="logo-text">EduLens</div>
+      <div class="logo-sub">Course Feedback Analyzer</div>
+    </div>
+  </div>
+  <div class="header-badge">Powered by Groq + Llama 3</div>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Analyze student feedback<br>with <em>equity awareness</em></h1>
+    <p>Paste course evaluations to get sentiment analysis, theme extraction, and equity-informed insights surfacing whose voices are being heard and how.</p>
+  </div>
+
+<<<<<<< HEAD
+=======
+  <!-- INPUT PANEL -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  <div class="panel">
+    <div class="panel-header">
+    </div>
+    <div class="panel-body">
+
+<<<<<<< HEAD
+      <div style="margin-bottom:1rem;">
+        <label>Groq API Key <span style="color:var(--text3)">(stored only in memory for this session)</span></label>
+        <input type="password" id="api-key" placeholder="gsk_..." style="font-size:13px;" />
+      </div>
+
+=======
+      <!-- CSV Upload -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+      <div style="margin-bottom:1rem;">
+        <label>Load from CSV files <span style="color:var(--text3)">(select all CSVs from your ProfessorFeedback folder)</span></label>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:0.4rem;">
+          <input type="file" id="csv-upload" accept=".csv"
+            onchange="loadCSVs()"
+            style="font-size:12px;color:var(--text2);background:var(--surface2);border:0.5px solid var(--border);border-radius:6px;padding:6px 10px;font-family:'DM Sans',sans-serif;flex:1;cursor:pointer;" />
+        </div>
+        <div id="csv-status" style="font-size:11px;color:var(--text3);margin-top:6px;font-family:'DM Mono',monospace;"></div>
+      </div>
+
+<<<<<<< HEAD
+=======
+      <!-- Instructor + Term filter -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+      <div id="filter-row" style="display:none;margin-bottom:1rem;">
+        <div class="input-grid">
+          <div>
+            <label>Filter by Instructor</label>
+            <select id="filter-instructor" onchange="applyFilter()" style="font-size:13px;height:34px;padding:0 8px;border:0.5px solid var(--border);border-radius:6px;background:var(--surface2);color:var(--text);font-family:'DM Sans',sans-serif;width:100%;">
+              <option value="all">All Instructors</option>
+            </select>
+          </div>
+          <div>
+            <label>Filter by Term</label>
+            <select id="filter-term" onchange="applyFilter()" style="font-size:13px;height:34px;padding:0 8px;border:0.5px solid var(--border);border-radius:6px;background:var(--surface2);color:var(--text);font-family:'DM Sans',sans-serif;width:100%;">
+              <option value="all">All Terms</option>
+            </select>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-top:6px;font-family:'DM Mono',monospace;" id="filter-count"></div>
+      </div>
+
+<<<<<<< HEAD
+=======
+      <!-- Manual input -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+      <button class="analyze-btn" id="analyze-btn" onclick="analyze()">
+        <span id="btn-text">Analyze Feedback</span>
+      </button>
+    </div>
+  </div>
+
+<<<<<<< HEAD
+=======
+  <!-- RESULTS -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  <div id="results">
+
+    <div class="results-header">
+      <div class="results-title">Analysis Report</div>
+      <div class="results-meta" id="results-meta"></div>
+    </div>
+
+    <div class="export-bar">
+      <button class="export-btn" onclick="exportJSON()">Export JSON</button>
+      <button class="export-btn" onclick="exportText()">Export Text Report</button>
+    </div>
+
+<<<<<<< HEAD
+    <div class="summary-grid" id="summary-cards"></div>
+
+=======
+    <!-- SUMMARY CARDS -->
+    <div class="summary-grid" id="summary-cards"></div>
+
+    <!-- SENTIMENT BAR -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+    <div class="sentiment-bar-wrap">
+      <div class="sentiment-bar-label">Sentiment Distribution</div>
+      <div class="sentiment-bar" id="sent-bar">
+        <div class="bar-seg bar-pos" id="bar-pos" style="width:0%"></div>
+        <div class="bar-seg bar-neu" id="bar-neu" style="width:0%"></div>
+        <div class="bar-seg bar-neg" id="bar-neg" style="width:0%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="legend-dot" style="background:var(--green)"></span>Positive: <span id="pct-pos">0%</span></span>
+        <span><span class="legend-dot" style="background:var(--amber)"></span>Neutral: <span id="pct-neu">0%</span></span>
+        <span><span class="legend-dot" style="background:var(--red)"></span>Negative: <span id="pct-neg">0%</span></span>
+      </div>
+    </div>
+
+<<<<<<< HEAD
+=======
+    <!-- THEMES + EQUITY -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+    <div class="two-col">
+      <div class="panel" style="opacity:1;animation:none;">
+        <div class="panel-header"><span class="panel-title">Key Themes</span></div>
+        <div class="panel-body">
+          <div class="theme-list" id="theme-list"></div>
+        </div>
+      </div>
+      <div class="panel" style="opacity:1;animation:none;">
+        <div class="panel-header"><span class="panel-title">Equity Flags</span></div>
+        <div class="panel-body">
+          <div class="equity-flags" id="equity-flags"></div>
+        </div>
+      </div>
+    </div>
+
+<<<<<<< HEAD
+=======
+    <!-- EXEC SUMMARY -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+    <div class="exec-summary">
+      <div class="panel-title" style="margin-bottom:0.75rem;">Executive Summary</div>
+      <div class="exec-summary-text" id="exec-summary"></div>
+    </div>
+
+<<<<<<< HEAD
+=======
+    <!-- COMMENTS TABLE -->
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+    <div class="comments-section">
+      <div class="panel-header"><span class="panel-title">Comment-Level Analysis</span></div>
+      <table class="comments-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Comment</th>
+            <th>Sentiment</th>
+            <th>Theme</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody id="comments-tbody"></tbody>
+      </table>
+    </div>
+
+  </div>
+</main>
+
+<script>
+<<<<<<< HEAD
+let analysisData = null;
+
+=======
+const SAMPLE = `The professor was incredibly clear and always made time for questions after class.
+I struggled to follow the lectures, felt like prior knowledge was assumed that wasn't covered.
+Loved the group projects, really helped me understand real-world applications.
+Office hours were never available at times that worked for students with jobs.
+The course content was interesting but the grading rubric was very vague.
+Best class I've taken this semester. The material is hard but the support is there.
+I felt like my questions were dismissed in class compared to other students.
+More diverse examples in the datasets used would have been helpful.
+The pace was too fast. I learn differently and never felt like I could catch up.
+Excellent use of real data and current events, kept me engaged throughout.
+I didn't feel comfortable speaking up in class, the environment felt unwelcoming at times.
+The workload was reasonable and the feedback on assignments was genuinely helpful.
+Assignments felt disconnected from what was taught. More alignment needed.
+Great professor, really cares about students understanding the material.
+Some students dominated discussions and I wish there was more structure for participation.`;
+
+let analysisData = null;
+
+function loadSample() {
+  document.getElementById('feedback-input').value = SAMPLE;
+  document.getElementById('course-name').value = 'INST327 Database Design and Modeling';
+  document.getElementById('term').value = 'Spring 2026';
+}
+
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+function showBubble(msg) {
+  let bubble = document.getElementById('error-bubble');
+  if (!bubble) {
+    bubble = document.createElement('div');
+    bubble.id = 'error-bubble';
+    bubble.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:#fff;color:#111;padding:1rem 1.25rem;border-radius:18px 18px 4px 18px;font-size:0.85rem;font-family:"DM Sans",sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.3);max-width:280px;z-index:999;line-height:1.5;';
+    document.body.appendChild(bubble);
+  }
+  bubble.textContent = msg;
+  bubble.style.display = 'block';
+  setTimeout(() => bubble.style.display = 'none', 4000);
+}
+
+async function analyze() {
+  const responses = allRows.length > 0
+    ? allRows.filter(r => {
+        const inst = document.getElementById('filter-instructor').value;
+        const term = document.getElementById('filter-term').value;
+        return (inst === 'all' || r.instructor === inst) && (term === 'all' || r.term === term);
+      }).map(r => r.question_response).filter(Boolean)
+    : [];
+  if (responses.length === 0) { showBubble('No responses loaded. Please select your CSV files first.'); return; }
+<<<<<<< HEAD
+
+  const key = document.getElementById('api-key').value.trim();
+  if (!key.startsWith('gsk_')) { showBubble('Enter a valid Groq API key first.'); return; }
+
+=======
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  const comments = responses;
+  const course = allRows[0] ? ('Instructor ' + (document.getElementById('filter-instructor').value || 'All')) : 'Course';
+  const term = document.getElementById('filter-term').value || '';
+
+  const btn = document.getElementById('analyze-btn');
+  btn.disabled = true;
+  document.getElementById('btn-text').innerHTML = '<span class="spinner"></span> Analyzing…';
+
+  const prompt = `You are an expert educational data analyst with a focus on equity-aware NLP. Analyze the following ${comments.length} student course evaluations for "${course}" (${term}).
+
+For each comment, classify:
+- sentiment: "positive", "neutral", or "negative"
+- primary_theme: one of [Teaching Quality, Course Structure, Workload, Inclusivity & Access, Assignments, Support & Resources, Engagement, Other]
+- equity_note: a brief flag if the comment suggests equity/access/inclusion concerns, or "" if none
+
+Then provide:
+- themes: array of {name, count} for all themes found
+- equity_flags: array of {type: "warning"|"ok"|"info", label, text} 3-5 specific equity insights about whose voices are amplified, access barriers, participation patterns, or demographic considerations raised in the comments
+- executive_summary: 3-4 sentence narrative summary of the feedback with specific attention to equity dimensions
+- overall_sentiment: "positive", "mixed", or "concerning"
+
+Comments:
+${comments.map((c, i) => `${i+1}. ${c}`).join('\n')}
+
+Respond ONLY with a valid JSON object, no markdown, no backticks:
+{
+  "comments": [{"index": 1, "text": "...", "sentiment": "...", "primary_theme": "...", "equity_note": "..."}],
+  "themes": [{"name": "...", "count": 0}],
+  "equity_flags": [{"type": "...", "label": "...", "text": "..."}],
+  "executive_summary": "...",
+  "overall_sentiment": "..."
+}`;
+
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+<<<<<<< HEAD
+        "Authorization": "Bearer " + key,
+=======
+        "Authorization": "Bearer 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",
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        max_tokens: 8000,
+        messages: [{role: "user", content: prompt}]
+      })
+    });
+    const data = await res.json();
+    const text = data.choices[0].message.content.trim().replace(/```json|```/g, "").trim();
+    const lastBrace = text.lastIndexOf('}');
+    const cleaned = text.substring(0, lastBrace + 1);
+    try { analysisData = JSON.parse(cleaned); } catch(e) {
+<<<<<<< HEAD
+=======
+      // try trimming to last complete object
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+      const alt = text.substring(0, text.lastIndexOf('"}') + 2) + ']}';
+      analysisData = JSON.parse(alt);
+    }
+    analysisData.course = course;
+    analysisData.term = term;
+    analysisData.total = comments.length;
+    renderResults(analysisData);
+  } catch(e) {
+    alert('Analysis failed. Please try again.');
+    console.error(e);
+  } finally {
+    btn.disabled = false;
+<<<<<<< HEAD
+    document.getElementById('btn-text').textContent = 'Analyze Feedback';
+=======
+    document.getElementById('btn-text').textContent = 'Analyze + add \u2197';
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  }
+}
+
+function renderResults(d) {
+  const pos = d.comments.filter(c => c.sentiment === 'positive').length;
+  const neu = d.comments.filter(c => c.sentiment === 'neutral').length;
+  const neg = d.comments.filter(c => c.sentiment === 'negative').length;
+  const equity = d.comments.filter(c => c.equity_note && c.equity_note.length > 2).length;
+
+  const posP = Math.round(pos/d.total*100);
+  const neuP = Math.round(neu/d.total*100);
+  const negP = 100 - posP - neuP;
+
+<<<<<<< HEAD
+=======
+  // Summary cards
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  const sentColor = d.overall_sentiment === 'positive' ? 'val-green' : d.overall_sentiment === 'mixed' ? 'val-amber' : 'val-red';
+  document.getElementById('summary-cards').innerHTML = `
+    <div class="summary-card">
+      <div class="summary-card-label">Total Comments</div>
+      <div class="summary-card-value val-blue">${d.total}</div>
+      <div class="summary-card-sub">${d.course}</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">Overall Sentiment</div>
+      <div class="summary-card-value ${sentColor}" style="font-size:1.4rem;margin-top:0.25rem;">${d.overall_sentiment.charAt(0).toUpperCase()+d.overall_sentiment.slice(1)}</div>
+      <div class="summary-card-sub">${posP}% positive responses</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">Equity Signals</div>
+      <div class="summary-card-value ${equity > 0 ? 'val-amber' : 'val-green'}">${equity}</div>
+      <div class="summary-card-sub">comment${equity !== 1 ? 's' : ''} flagged for review</div>
+    </div>
+  `;
+
+<<<<<<< HEAD
+=======
+  // Sentiment bar
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  setTimeout(() => {
+    document.getElementById('bar-pos').style.width = posP + '%';
+    document.getElementById('bar-neu').style.width = neuP + '%';
+    document.getElementById('bar-neg').style.width = negP + '%';
+  }, 100);
+  document.getElementById('pct-pos').textContent = posP + '%';
+  document.getElementById('pct-neu').textContent = neuP + '%';
+  document.getElementById('pct-neg').textContent = negP + '%';
+
+<<<<<<< HEAD
+=======
+  // Themes
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  const maxTheme = Math.max(...d.themes.map(t => t.count));
+  document.getElementById('theme-list').innerHTML = d.themes
+    .sort((a,b) => b.count - a.count)
+    .map(t => `
+      <div class="theme-item">
+        <span class="theme-name">${t.name}</span>
+        <div class="theme-bar-wrap">
+          <div class="theme-bar-fill" style="width:${Math.round(t.count/maxTheme*100)}%"></div>
+        </div>
+        <span class="theme-pct">${t.count}</span>
+      </div>`).join('');
+
+<<<<<<< HEAD
+=======
+  // Equity flags
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  document.getElementById('equity-flags').innerHTML = d.equity_flags.map(f => `
+    <div class="equity-flag flag-${f.type === 'warning' ? 'warn' : f.type === 'ok' ? 'ok' : 'info'}">
+      <div class="flag-label">${f.label}</div>
+      <div class="flag-text">${f.text}</div>
+    </div>`).join('');
+
+<<<<<<< HEAD
+  document.getElementById('exec-summary').textContent = d.executive_summary;
+
+  document.getElementById('results-meta').textContent = `Generated ${new Date().toLocaleString()}`;
+
+=======
+  // Exec summary
+  document.getElementById('exec-summary').textContent = d.executive_summary;
+
+  // Results meta
+  document.getElementById('results-meta').textContent = `Generated ${new Date().toLocaleString()}`;
+
+  // Comments table
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  document.getElementById('comments-tbody').innerHTML = d.comments.map(c => `
+    <tr>
+      <td style="color:var(--text3);font-family:'DM Mono',monospace;font-size:0.72rem;">${c.index}</td>
+      <td>${c.text}</td>
+      <td><span class="sentiment-badge badge-${c.sentiment === 'positive' ? 'pos' : c.sentiment === 'neutral' ? 'neu' : 'neg'}">${c.sentiment}</span></td>
+      <td style="font-size:0.78rem;color:var(--text2);white-space:nowrap;">${c.primary_theme}</td>
+      <td style="font-size:0.78rem;color:var(--amber);">${c.equity_note || ''}</td>
+    </tr>`).join('');
+
+  const resultsEl = document.getElementById('results');
+  resultsEl.style.display = 'block';
+  resultsEl.style.opacity = '0';
+  resultsEl.style.animation = 'none';
+  setTimeout(() => {
+    resultsEl.style.animation = 'fadeUp 0.5s ease forwards';
+  }, 10);
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+<<<<<<< HEAD
+let allRows = [];
+=======
+// ── CSV Loading ───────────────────────────────────────────────────────────────
+
+let allRows = [];  // all parsed rows from all CSVs
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+
+function parseCSV(text) {
+  const lines = text.split('\n').filter(l => l.trim());
+  if (lines.length < 2) return [];
+  const sep = lines[0].includes('\t') ? '\t' : ',';
+  const headers = lines[0].split(sep).map(h => h.trim().toLowerCase().replace(/"/g, '').replace(/\s+/g, '_'));
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    const vals = lines[i].split(sep).map(v => v.trim().replace(/^"|"$/g, ''));
+    if (vals.length < headers.length) continue;
+    const row = {};
+    headers.forEach((h, idx) => row[h] = vals[idx] || '');
+<<<<<<< HEAD
+=======
+    // also try comma split if tab didnt work
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+    if (!row['question_response'] && lines[i].includes(',')) {
+      const cvals = lines[i].split(',').map(v => v.trim().replace(/^"|"$/g, ''));
+      headers.forEach((h, idx) => row[h] = cvals[idx] || '');
+    }
+    if (row['question_response'] && row['question_response'].length > 5) {
+      rows.push(row);
+    }
+  }
+  return rows;
+}
+
+async function loadCSVs() {
+  const input = document.getElementById('csv-upload');
+  const status = document.getElementById('csv-status');
+  const files = Array.from(input.files);
+  if (files.length === 0) { status.textContent = 'No files selected.'; return; }
+
+  status.textContent = 'Reading files...';
+  allRows = [];
+
+  for (const file of files) {
+    const text = await file.text();
+    const rows = parseCSV(text);
+    allRows.push(...rows);
+  }
+
+  if (allRows.length === 0) {
+    status.textContent = 'No valid rows found. Check that your CSVs have a question_response column.';
+    return;
+  }
+
+  status.textContent = allRows.length + ' responses loaded from ' + files.length + ' file(s).';
+
+<<<<<<< HEAD
+=======
+  // Populate instructor dropdown
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  const instructors = [...new Set(allRows.map(r => r['instructor']).filter(Boolean))].sort();
+  const terms = [...new Set(allRows.map(r => r['term']).filter(Boolean))].sort();
+
+  const instrSel = document.getElementById('filter-instructor');
+  const termSel = document.getElementById('filter-term');
+  instrSel.innerHTML = '<option value="all">All Instructors</option>';
+  termSel.innerHTML = '<option value="all">All Terms</option>';
+  instructors.forEach(i => instrSel.innerHTML += `<option value="${i}">${i}</option>`);
+  terms.forEach(t => termSel.innerHTML += `<option value="${t}">${t}</option>`);
+
+  document.getElementById('filter-row').style.display = 'block';
+  applyFilter();
+}
+
+function applyFilter() {
+  const instructor = document.getElementById('filter-instructor').value;
+  const term = document.getElementById('filter-term').value;
+
+  let filtered = allRows;
+  if (instructor !== 'all') filtered = filtered.filter(r => r['instructor'] === instructor);
+  if (term !== 'all') filtered = filtered.filter(r => r['term'] === term);
+
+  const responses = filtered.map(r => r['question_response']).filter(Boolean);
+
+<<<<<<< HEAD
+=======
+  // Auto-fill course name and term fields
+  if (filtered.length > 0) {
+    const firstRow = filtered[0];
+    if (firstRow['instructor'] && instructor !== 'all') {
+      document.getElementById('course-name').value = 'Instructor ' + firstRow['instructor'];
+    }
+    if (firstRow['term'] && term !== 'all') {
+      document.getElementById('term').value = firstRow['term'];
+    }
+  }
+
+>>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+  document.getElementById('filter-count').textContent = responses.length + ' responses ready for analysis.';
+}
+
+function exportJSON() {
+  if (!analysisData) return;
+  const blob = new Blob([JSON.stringify(analysisData, null, 2)], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `edulens-${analysisData.course.replace(/\s+/g,'-')}-${Date.now()}.json`;
+  a.click();
+}
+
+function exportText() {
+  if (!analysisData) return;
+  const d = analysisData;
+  const pos = d.comments.filter(c => c.sentiment === 'positive').length;
+  const neg = d.comments.filter(c => c.sentiment === 'negative').length;
+  const text = `EDULENS ANALYSIS REPORT
+Course: ${d.course} | Term: ${d.term}
+Generated: ${new Date().toLocaleString()}
+${'='.repeat(60)}
+
+SUMMARY
+Total comments: ${d.total}
+Overall sentiment: ${d.overall_sentiment}
+Positive: ${pos} | Negative: ${neg}
+
+EXECUTIVE SUMMARY
+${d.executive_summary}
+
+EQUITY FLAGS
+${d.equity_flags.map(f => `[${f.label}] ${f.text}`).join('\n')}
+
+THEMES
+${d.themes.sort((a,b)=>b.count-a.count).map(t => `${t.name}: ${t.count}`).join('\n')}
+
+COMMENT-LEVEL ANALYSIS
+${d.comments.map(c => `${c.index}. [${c.sentiment.toUpperCase()}] [${c.primary_theme}] ${c.text}${c.equity_note ? '\n   ⚠ ' + c.equity_note : ''}`).join('\n\n')}`;
+
+  const blob = new Blob([text], {type: 'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `edulens-report-${Date.now()}.txt`;
+  a.click();
+}
+</script>
+</body>
+</html>
