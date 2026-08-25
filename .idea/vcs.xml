@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="Git" />
-<<<<<<< HEAD
-    <mapping directory="$PROJECT_DIR$/temp-edulens" vcs="Git" />
-=======
->>>>>>> 64dfad21c8be60589a3f0367b0d458fb57536227
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
